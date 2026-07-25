@@ -1,0 +1,46 @@
+/* RealEquityIQ environment animations
+   Steam, curtain-glow, and tree-shimmer overlays were removed -- after
+   extensive tuning, none of them reliably read as convincing motion
+   (steam's smoke quality never quite landed; curtain glow, even at
+   verified-correct large values, only ever looked like a light patch
+   pulsing, not fabric moving). Kept: a single, simple whole-image pan.
+   It has no per-scene coordinates to get wrong and nothing to align with
+   objects in the photo, which is exactly why it doesn't share the
+   previous effects' problems.
+
+   ROOM PAN: center -> right -> center -> left -> center, 30s per leg,
+   120s full cycle, as specified. Distance (3%) stays within .env-photo's
+   existing 4% overscan margin (inset:-4%/width:108%/height:108%) so the
+   edges of the source image are never exposed while panning. */
+
+@keyframes roomPan {
+  /* Using 4% here (not accounting for .env-photo's own width being 108% of
+     the stage) actually moves it 4.32% of the stage's width -- translateX(%)
+     resolves against the element's OWN box, not its container. That 0.32%
+     overshoot exposes a real ~3px gap at each pan extreme (confirmed via
+     pixel sampling, not just math). 3.7% is the corrected value that lands
+     exactly on the edge of the 4% overscan margin with zero gap. */
+  0%   { transform: translateX(0%); }
+  25%  { transform: translateX(3.7%); }
+  50%  { transform: translateX(0%); }
+  75%  { transform: translateX(-3.7%); }
+  100% { transform: translateX(0%); }
+}
+
+.env-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1537 / 1023;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.env-photo {
+  position: absolute;
+  inset: -4%;
+  width: 108%;
+  height: 108%;
+  background-size: cover;
+  background-position: center;
+  animation: roomPan 48s linear infinite;
+}

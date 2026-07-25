@@ -1,0 +1,30 @@
+// Simplified: steam/curtain/tree overlay effects removed (see
+// environmentAnimations.css for why). Each scene is now just its
+// image path -- AnimatedEnvironment only needs `image`.
+export const sceneConfig = {
+  'env-hh-close': { image: '/environments/env-hh-close.png' },
+  'env-hh-define': { image: '/environments/env-hh-define.png' },
+  'env-hh-offer': { image: '/environments/env-hh-offer.png' },
+  'env-hh-preapproved': { image: '/environments/env-hh-preapproved.png' },
+  'env-hh-tour': { image: '/environments/env-hh-tour.png' },
+  'env-home-close': { image: '/environments/env-home-close.png' },
+  'env-home-define': { image: '/environments/env-home-define.png' },
+  'env-home-offer': { image: '/environments/env-home-offer.png' },
+  'env-home-preapproved': { image: '/environments/env-home-preapproved.png' },
+  'env-home-tour': { image: '/environments/env-home-tour.png' },
+  'env-rent-assess': { image: '/environments/env-rent-assess.png' },
+  'env-rent-define': { image: '/environments/env-rent-define.png' },
+  'env-rent-graduate': { image: '/environments/env-rent-graduate.png' },
+  'env-rent-invest': { image: '/environments/env-rent-invest.png' },
+  'env-rent-reassess': { image: '/environments/env-rent-reassess.png' },
+  'env-stock-assess': { image: '/environments/env-stock-assess.png' },
+  'env-stock-define': { image: '/environments/env-stock-define.png' },
+  'env-stock-execute': { image: '/environments/env-stock-execute.png' },
+  'env-stock-optimize': { image: '/environments/env-stock-optimize.png' },
+  'env-stock-research': { image: '/environments/env-stock-research.png' },
+  'env-wait-assess': { image: '/environments/env-wait-assess.png' },
+  'env-wait-build': { image: '/environments/env-wait-build.png' },
+  'env-wait-define': { image: '/environments/env-wait-define.png' },
+  'env-wait-monitor': { image: '/environments/env-wait-monitor.png' },
+  'env-wait-reassess': { image: '/environments/env-wait-reassess.png' },
+};

@@ -1,0 +1,38 @@
+RealEquityIQ Certificate Asset Package
+
+Location:
+public/assets/certificates/
+
+File resolution:
+1536 × 1024 px
+
+Selection logic:
+Select the asset using the completed journey and the learner's current academic rank.
+
+Naming:
+cert_<journey>_<rank>.webp
+
+Journeys:
+home_purchase
+house_hack
+stock_investing
+strategic_renting
+wait_and_save
+
+Ranks:
+explorer
+scholar
+practitioner
+
+Approved visual standard:
+cert_house_hack_scholar.webp
+
+Development responsibilities:
+1. Load the matching certificate asset.
+2. Present it in the certificate viewer/download experience.
+3. Preserve the source aspect ratio.
+4. Do not stretch, crop, recolor, or add filters.
+5. If personalized fields must replace the shown placeholders, overlay recipient name, completion date,
+   certificate number, and IQ earned at the agreed fixed coordinates; do not reconstruct the certificate design.
+6. Ensure the displayed and downloaded certificate use the same journey/rank combination.
+7. Include descriptive alt text and a printable/downloadable version.
